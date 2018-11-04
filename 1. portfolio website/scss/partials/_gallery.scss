@@ -1,0 +1,97 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  .image-holder {
+    max-width: 300px;
+    min-width: 200px;
+    max-height: 200px;
+    padding: 10px;
+    margin: 20px 10px;
+    img {
+      max-width: 100%;
+      max-height: 190px;
+    }
+  }
+}
+
+.popuparea {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(000, 000, 000, 0.8);
+  transition: opacity 0.2s ease-in;
+  opacity: 0;
+
+  .viewer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    transform: translateX(100px);
+    //transform: scale(0.9);
+    justify-content: center;
+    transition: transform 0.3s ease 0.1s;
+    img {
+      &.rotate-90 {
+        transform: translateY(-100%) rotate(90deg);
+        transform-origin: left bottom;
+      }
+      &.rotate-180 {
+        transform: rotate(180deg);
+      }
+      &.rotate-270 {
+        transform: translateX(-100%) rotate(270deg);
+        transform-origin: top right;
+      }
+    }
+    .toolbar {
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      .title {
+        color: #fff;
+      }
+      .btnRotate {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  img {
+    display: none;
+  }
+  .popupRemove {
+    width: 0px;
+    height: 0px;
+  }
+
+  .closeImage {
+    font-size: 2.5em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    color: white;
+  }
+
+  &.show {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    .viewer {
+      transform: translateX(100px);
+      transform: scale(1);
+      img {
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+  .gallery .image-holder {
+    max-width: 300px;
+    min-width: 200px;
+    max-height: 200px;
+    padding: 10px;
+    margin: 20px 10px; }
+    .gallery .image-holder img {
+      max-width: 100%;
+      max-height: 190px; }
+
+.popuparea {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.2s ease-in;
+  opacity: 0; }
+  .popuparea .viewer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    transform: translateX(100px);
+    justify-content: center;
+    transition: transform 0.3s ease 0.1s; }
+    .popuparea .viewer img.rotate-90 {
+      transform: translateY(-100%) rotate(90deg);
+      transform-origin: left bottom; }
+    .popuparea .viewer img.rotate-180 {
+      transform: rotate(180deg); }
+    .popuparea .viewer img.rotate-270 {
+      transform: translateX(-100%) rotate(270deg);
+      transform-origin: top right; }
+    .popuparea .viewer .toolbar {
+      width: 100%;
+      text-align: center;
+      color: #fff; }
+      .popuparea .viewer .toolbar .title {
+        color: #fff; }
+      .popuparea .viewer .toolbar .btnRotate {
+        padding-left: 20px; }
+  .popuparea img {
+    display: none; }
+  .popuparea .popupRemove {
+    width: 0px;
+    height: 0px; }
+  .popuparea .closeImage {
+    font-size: 2.5em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    color: white; }
+  .popuparea.show {
+    width: 100%;
+    height: 100%;
+    opacity: 1; }
+    .popuparea.show .viewer {
+      transform: translateX(100px);
+      transform: scale(1); }
+      .popuparea.show .viewer img {
+        display: block;
+        max-width: 90%;
+        max-height: 90%; }
+
+#txtSearch {
+  width: 300px; }
+
+#bookListView {
+  text-align: center; }
+  #bookListView #bookList {
+    display: flex;
+    flex-wrap: wrap; }
+    #bookListView #bookList .book {
+      margin: 5px 10px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      border-radius: 2px;
+      width: 150px; }
+      #bookListView #bookList .book .title {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        font-size: 14px;
+        max-width: 100%; }
+      #bookListView #bookList .book .content {
+        padding: 10px 5px;
+        height: 150px; }
+        #bookListView #bookList .book .content img {
+          max-width: 100%;
+          max-height: 100%; }
